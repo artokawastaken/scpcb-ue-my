@@ -135,6 +135,11 @@ Function ScaledMouseY#()
 End Function
 
 Function MouseOn%(x%, y%, Width%, Height%)
+	x = Upscale(x)
+	y = Upscale(y)
+	Width = Upscale(Width)
+	Height = Upscale(Height)
+	
 	If ScaledMouseX() > x And ScaledMouseX() < x + Width Then
 		If ScaledMouseY() > y And ScaledMouseY() < y + Height Then
 			Return(True)

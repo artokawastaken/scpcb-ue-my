@@ -152,6 +152,7 @@ fo\FontID[Font_Console] = LoadFont_Strict("GFX\fonts\Andale\Andale Mono.ttf", 16
 SetFont(fo\FontID[Font_Default_Big])
 
 Global BlinkMeterIMG% = LoadImage_Strict("GFX\blink_meter(1).png")
+BlinkMeterIMG = ScaleImage2(BlinkMeterIMG, MenuScale, MenuScale)
 
 RenderLoading(0, "MAIN CORE")
 

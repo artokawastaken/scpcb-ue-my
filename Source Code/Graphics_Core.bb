@@ -532,5 +532,55 @@ Function GetScreenshot()
 	ScreenshotCount = ScreenshotCount + 1
 End Function
 
+Function Upscale#(Value#)
+	Return(Value * MenuScale)
+End Function
+
+Function Downscale#(Value#)
+	Return(Value / MenuScale)
+End Function
+
+Function Text2%(x%, y%, Txt$, AlignX% = False, AlignY% = False)
+	x = Upscale(x)
+	y = Upscale(y)
+	
+	Text(x, y, Txt, AlignX, AlignY)
+End Function
+
+Function Rect2%(x%, y%, Width%, Height%, Solid% = True)
+	x = Upscale(x)
+	y = Upscale(y)
+	Width = Upscale(Width)
+	Height = Upscale(Height)
+	
+	Rect(x, y, Width, Height, Solid)
+End Function
+
+Function DrawImage2%(Img%, x%, y%, Frame% = 0)
+	x = Upscale(x)
+	y = Upscale(y)
+	
+	DrawImage(Img, x, y, Frame)
+End Function
+
+Function DrawImageRect2%(Img%, x%, y%, SrcX%, SrcY%, SrcWidth%, SrcHeight%, Frame% = 0)
+	x = Upscale(x)
+	y = Upscale(y)
+	SrcX = Upscale(SrcX)
+	SrcY = Upscale(SrcY)
+	SrcWidth = Upscale(SrcWidth)
+	SrcHeight = Upscale(SrcHeight)
+	
+	DrawImageRect(Img, x, y, SrcX, SrcY, SrcWidth, SrcHeight, Frame)
+End Function
+
+Function StringWidth2%(Txt$)
+	Return(Downscale(StringWidth(Txt)))
+End Function
+
+Function StringHeight2%(Txt$)
+	Return(Downscale(StringHeight(Txt)))
+End Function
+
 ;~IDEal Editor Parameters:
 ;~C#Blitz3D
