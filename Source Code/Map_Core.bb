@@ -5872,6 +5872,7 @@ Function FillRoom(r.Rooms)
 			
 			If Rand(2) = 1 Then
 				it.Items = CreateItem("9V Battery", "bat", r\x - 1529.0 * RoomScale, r\y + 605.0 * RoomScale, r\z - 308.0 * RoomScale)
+				EntityParent(it\Collider, r\OBJ)
 			EndIf
 			;[End Block]
 		Case "cont1_173"
