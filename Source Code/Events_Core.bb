@@ -2254,6 +2254,7 @@ Function UpdateEvents%()
 						EndIf
 					EndIf
 				Else
+					If e\room\NPC[0] <> Null Then RemoveNPC(e\room\NPC[0])
 					RemoveEvent(e)
 				EndIf
 				;[End Block]
