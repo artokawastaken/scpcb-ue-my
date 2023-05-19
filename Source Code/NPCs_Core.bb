@@ -3859,6 +3859,12 @@ Function UpdateNPCs%()
 						ElseIf n\State3 < 900.0
 							n\State3 = Max(n\State3 - fps\Factor[0] * 0.2, 0.0)
 						EndIf
+										
+						If n\TeslaHit Then
+						HideEntity n\obj
+						n\State = 0
+						TranslateEntity n\Collider, -1000, n\DropSpeed, 0
+					        EndIf
 						
 						If n\State <> 10.0 Then n\LastSeen = 0
 						
