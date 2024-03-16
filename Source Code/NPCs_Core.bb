@@ -2114,7 +2114,7 @@ Function UpdateNPCs%()
 											If EntityDistanceSquared(n\Collider, me\Collider) < 0.49
 												PlaySound_Strict(DamageSFX[Rand(5, 8)])
 												InjurePlayer(Rnd(0.55, 0.85) * DifficultyDMGMult, 0.0, 0.0, Rnd(0.25, 0.3) * DifficultyDMGMult, 0.2)
-												me\CameraShake = 2.0
+												me\CameraShake = 2.5
 												
 												If me\Injuries > 3.0
 													msg\DeathMsg = Format(GetLocalString("death", "0492killed"), SubjectName)
@@ -3419,7 +3419,7 @@ Function UpdateNPCs%()
 										
 										If (PrevFrame < 461.0 And n\Frame >= 461.0)
 											PlaySound_Strict(DamageSFX[11])
-											me\CameraShake = 2.0
+											me\BigCameraShake = 6.0
 											Kill(True)
 										EndIf
 										If (PrevFrame < 476.0 And n\Frame >= 476.0) Lor (PrevFrame < 486.0 And n\Frame >= 486.0) Then PlaySound_Strict(DamageSFX[12])
@@ -3557,7 +3557,7 @@ Function UpdateNPCs%()
 										If DistanceSquared(n\EnemyX, EntityX(n\Collider), n\EnemyZ, EntityZ(n\Collider)) < 2.25
 											PlaySound_Strict(DamageSFX[11])
 											InjurePlayer(Rnd(1.5, 2.5), 0.0, 500.0, Rnd(0.2, 0.75))
-											me\CameraShake = 2.0
+											me\BigCameraShake = 5.0
 										Else
 											SetNPCFrame(n, 449.0)
 										EndIf
@@ -4116,7 +4116,7 @@ Function UpdateNPCs%()
 										If Dist < 0.81
 											PlaySound2(DamageSFX[Rand(11, 12)], Camera, n\Collider)
 											InjurePlayer(Rnd(0.45, 0.75) * DifficultyDMGMult, 0.0, 500.0, Rnd(0.2, 0.25) * DifficultyDMGMult)
-											me\CameraShake = 2.0
+											me\BigCameraShake = 2.0
 											If me\Injuries > 10.0
 												msg\DeathMsg = Format(GetLocalString("death", "966"), SubjectName)
 												Kill(True)
@@ -4450,7 +4450,7 @@ Function UpdateNPCs%()
 								Else
 									PlaySound2(DamageSFX[Rand(11, 12)], Camera, n\Collider)
 									InjurePlayer(Rnd(0.65, 1.1) * DifficultyDMGMult, 0.0, 500.0, Rnd(0.3, 0.35) * DifficultyDMGMult, 0.2)
-									me\CameraShake = 2.0
+									me\CameraShake = 3.0
 									
 									If me\Injuries > 10.0
 										If RID = r_dimension_1499
@@ -4669,7 +4669,7 @@ Function UpdateNPCs%()
 										If EntityDistanceSquared(n\Collider, me\Collider) < 0.49
 											PlaySound_Strict(DamageSFX[Rand(5, 8)])
 											InjurePlayer(Rnd(0.4, 0.7) * DifficultyDMGMult, 1.0 + SelectedDifficulty\AggressiveNPCs, 0.0, Rnd(0.175, 0.225) * DifficultyDMGMult, 0.2)
-											me\CameraShake = 2.0
+											me\CameraShake = 2.5
 											
 											If me\Injuries > 3.0
 												msg\DeathMsg = Format(GetLocalString("death", "008"), SubjectName)
