@@ -3091,11 +3091,13 @@ Function UpdateNPCs%()
 												If wi\HazmatSuit > 0
 													PlaySound_Strict(LoadTempSound("SFX\General\BodyFall.ogg"))
 													InjurePlayer(Rnd(0.5))
+                                                                                                        me\CameraShake = 0.2
 												Else
 													PlaySound_Strict(DamageSFX[Rand(9, 10)])
 													InjurePlayer(Rnd(0.75, 1.15) * DifficultyDMGMult, 0.0, 100.0, Rnd(0.35, 0.4) * DifficultyDMGMult, 0.2)
+													me\CameraShake = 2.0
 													
-													If me\Injuries > 3.0
+                                                                                                        If me\Injuries > 3.0
 														If RID = r_room2_ez
 															msg\DeathMsg = GetLocalString("death", "035.offices")
 														Else
@@ -3103,8 +3105,7 @@ Function UpdateNPCs%()
 														EndIf
 														Kill(True)
 													EndIf
-												EndIf
-												me\CameraShake = 2.0
+												EndIF
 											Else
 												PlaySound2(MissSFX, Camera, n\Collider)
 											EndIf
